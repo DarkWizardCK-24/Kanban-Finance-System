@@ -57,8 +57,7 @@ Perfect for:
 
 ---
 
-## 🏗 Installation & Setup
+Made with ❤️ for smart money minds
+Start building your wealth today! 💪📈
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/kanban-finance-system.git
+---

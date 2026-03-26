@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "928147052600",
+    "project_id": "kanban-finance-system",
+    "storage_bucket": "kanban-finance-system.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928147052600:android:428a3598cfbfbef1b26ecd",
+        "android_client_info": {
+          "package_name": "com.kanbanfinance.kanban_finance_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtjkKsFjuj32p-fhXuHUGSiVmrY84ptlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

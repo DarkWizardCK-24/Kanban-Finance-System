@@ -1,0 +1,67 @@
+class Validators {
+  Validators._();
+
+  static String? email(String? value) {
+    if (value == null || value.isEmpty) return 'Email is required';
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(value)) return 'Enter a valid email';
+    return null;
+  }
+
+  static String? password(String? value) {
+    if (value == null || value.isEmpty) return 'Password is required';
+    if (value.length < 6) return 'Password must be at least 6 characters';
+    return null;
+  }
+
+  static String? confirmPassword(String? value, String password) {
+    if (value == null || value.isEmpty) return 'Please confirm your password';
+    if (value != password) return 'Passwords do not match';
+    return null;
+  }
+
+  static String? required(String? value, [String field = 'This field']) {
+    if (value == null || value.trim().isEmpty) return '$field is required';
+    return null;
+  }
+
+  static String? phone(String? value) {
+    if (value == null || value.isEmpty) return 'Phone number is required';
+    if (value.length < 10) return 'Enter a valid phone number';
+    return null;
+  }
+
+  /// Validates account number — minimum 6 digits to support
+  /// Post Office / Postal Savings (7-digit) and other short account numbers.
+  static String? accountNumber(String? value) {
+    if (value == null || value.isEmpty) return 'Account number is required';
+    if (value.length < 6) return 'Enter a valid account number (min 6 digits)';
+    return null;
+  }
+
+  static String? ifscCode(String? value) {
+    if (value == null || value.isEmpty) return 'IFSC code is required';
+    final ifscRegex = RegExp(r'^[A-Z]{4}0[A-Z0-9]{6}$');
+    if (!ifscRegex.hasMatch(value.toUpperCase())) return 'Enter a valid IFSC code';
+    return null;
+  }
+
+  static String? cardNumber(String? value) {
+    if (value == null || value.isEmpty) return 'Card number is required';
+    if (value.replaceAll(' ', '').length < 16) return 'Enter a valid 16-digit card number';
+    return null;
+  }
+
+  static String? cvv(String? value) {
+    if (value == null || value.isEmpty) return 'CVV is required';
+    if (value.length < 3) return 'Enter a valid 3-digit CVV';
+    return null;
+  }
+
+  static String? amount(String? value) {
+    if (value == null || value.isEmpty) return 'Amount is required';
+    final amount = double.tryParse(value);
+    if (amount == null || amount <= 0) return 'Enter a valid amount';
+    return null;
+  }
+}

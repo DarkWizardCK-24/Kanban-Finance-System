@@ -1,63 +1,43 @@
-<div align="center">
+# Kanban Finance System
 
-# 🚀 Kanban Finance System
+A Flutter app for tracking bank accounts, transactions and wealth on Kanban boards. Move transactions across status columns and see inflow, outflow and net flow at a glance.
 
-**The smartest way to manage and grow your wealth** 💰
+A web version built with Next.js is in [Kanban-Finance-Web](https://github.com/DarkWizardCK-24/Kanban-Finance-Web). Both use the same Firebase project, so accounts and data stay in sync.
 
-A beautiful and powerful Flutter-based **Kanban Finance App** that helps you visualize, organize, and execute your financial strategies effectively.
+## Features
 
-![App Banner](https://via.placeholder.com/800x400/1E88E5/FFFFFF?text=Kanban+Finance+System) <!-- Replace with your actual banner -->
+- **Authentication**: email and password login and registration with Firebase Auth.
+- **Bank accounts**: add and edit accounts shown as gradient cards.
+- **Transactions**: record credits and debits per account.
+- **Kanban board**: drag transactions across stages to update their status.
+- **Wealth summary**: inflow, outflow and net flow calculated from your transactions.
+- **Profile management**, animated screens and a custom theme.
 
-</div>
+## Tech stack
 
----
+- Flutter and Dart
+- Firebase Auth and Cloud Firestore
+- `flutter_animate`, `google_fonts`, `font_awesome_flutter`, `intl`, `uuid`
 
-## ✨ Features
+## Project structure
 
-- **📊 Visual Kanban Boards** – Drag & drop tasks across stages (To Do → In Progress → Done)
-- **💰 Wealth Management** – Track income, expenses, savings & investments
-- **🎯 Strategy Planning** – Design and monitor your personal wealth growth strategies
-- **🔥 Real-time Sync** – Powered by Firebase Firestore
-- **🔐 Secure Authentication** – Email/Password + Google Sign-In with Firebase Auth
-- **📱 Beautiful & Responsive UI** – Built with latest Flutter
-- **📈 Progress Tracking** – Visual cards with amounts, deadlines & priorities
-- **🌙 Dark Mode Support**
+```
+lib/
+  models/      bank account, transaction and user models
+  services/    auth_service, firestore_service
+  screens/     auth, home, bank, kanban, profile
+  widgets/     bank cards, wealth summary, kanban columns and cards
+  utils/       formatters, validators, wealth_calculator
+  constants/   colours, strings, theme
+```
 
----
+## Getting started
 
-## 🛠 Tech Stack
+1. Install Flutter (Dart SDK 3.11 or newer).
+2. Create a Firebase project with Email/Password auth and Firestore, then run `flutterfire configure` to generate `lib/firebase_options.dart`.
+3. Run:
 
-- **Flutter** (Latest version)
-- **Firebase Authentication**
-- **Firebase Firestore** (Real-time Database)
-- **Provider / Riverpod** (State Management)
-- **Flutter Slidable + Drag & Drop**
-- **Google Fonts + Custom Animations**
-
----
-
-## 📸 Screenshots
-
-<!-- Add your screenshots here later -->
-*(Screenshots coming soon...)*
-
----
-
-## 🚀 How It Helps You
-
-Kanban Finance turns traditional budgeting into a **visual, engaging, and actionable** experience.
-
-Instead of boring spreadsheets, you get a **Kanban board** where every financial goal or task has its own card. Move cards across columns as you progress — making wealth building fun, clear, and motivating! 🎉
-
-Perfect for:
-- Personal finance enthusiasts
-- Freelancers & professionals
-- Students learning money management
-- Anyone serious about **wealth growth**
-
----
-
-Made with ❤️ for smart money minds
-Start building your wealth today! 💪📈
-
----
+```bash
+flutter pub get
+flutter run
+```
